@@ -1,0 +1,670 @@
+{
+  "sessionDate": "2026-03-19",
+  "savedAtIST": "2026-03-19 16:32:49",
+  "modes": {
+    "swing": {
+      "meta": {
+        "title": "Should I Be Trading?",
+        "mode": "swing",
+        "modeLabel": "Swing Trading",
+        "marketOpen": false,
+        "asOfIST": "2026-03-19 16:32:49",
+        "status": "LIVE",
+        "dataFreshnessNote": "Latest available NSE/Yahoo data with resilient fallbacks",
+        "quoteSourceMix": {
+          "nse": 15,
+          "yahoo": 0,
+          "staticFallback": 1
+        }
+      },
+      "decision": {
+        "value": "NO",
+        "action": "Avoid trading, preserve capital"
+      },
+      "marketQualityScore": 18.8,
+      "executionWindowScore": 42,
+      "summary": "Environment is fragile and capital protection should dominate. Nifty regime is downtrend with RSI at 23.9 and India VIX at 22.80 (0.67% 5d slope). Breadth A/D ratio is 0.02 while FII flows are net negative. Execution window reads 42/100 for Swing Trading mode.",
+      "categoryScores": {
+        "volatility": 40,
+        "momentum": 21,
+        "trend": 0,
+        "breadth": 0,
+        "macroLiquidity": 35
+      },
+      "weights": {
+        "volatility": 25,
+        "momentum": 25,
+        "trend": 20,
+        "breadth": 20,
+        "macroLiquidity": 10
+      },
+      "ticker": {
+        "nifty50": {
+          "symbol": "^NSEI",
+          "shortName": "NIFTY 50",
+          "price": 23002.15,
+          "change": -775.65,
+          "changePercent": -3.26,
+          "previousClose": 23777.8,
+          "timestamp": null,
+          "source": "NSE"
+        },
+        "bankNifty": {
+          "symbol": "^NSEBANK",
+          "shortName": "NIFTY BANK",
+          "price": 53451,
+          "change": -1875.05,
+          "changePercent": -3.39,
+          "previousClose": 55326.05,
+          "timestamp": null,
+          "source": "NSE"
+        },
+        "indiaVix": {
+          "symbol": "^INDIAVIX",
+          "shortName": "INDIA VIX",
+          "price": 22.8,
+          "change": 4.08,
+          "changePercent": 21.79,
+          "previousClose": 18.72,
+          "timestamp": null,
+          "source": "NSE"
+        },
+        "usdInr": {
+          "price": 83.1,
+          "changePercent": 0.06,
+          "symbol": "USDINR=X",
+          "timestamp": "2026-03-19T11:02:17.355Z"
+        },
+        "gsec10y": {
+          "symbol": "IN10Y",
+          "price": 7.08,
+          "changePercent": 0.05
+        },
+        "sectors": [
+          {
+            "key": "niftyIT",
+            "label": "Nifty IT",
+            "value": 28579.6,
+            "changePercent": -3.31
+          },
+          {
+            "key": "bankNifty",
+            "label": "Nifty Bank",
+            "value": 53451,
+            "changePercent": -3.39
+          },
+          {
+            "key": "niftyPharma",
+            "label": "Nifty Pharma",
+            "value": 22101.65,
+            "changePercent": -2.35
+          },
+          {
+            "key": "niftyAuto",
+            "label": "Nifty Auto",
+            "value": 24509.9,
+            "changePercent": -4.25
+          },
+          {
+            "key": "niftyFMCG",
+            "label": "Nifty FMCG",
+            "value": 46861.95,
+            "changePercent": -2.53
+          },
+          {
+            "key": "niftyMetal",
+            "label": "Nifty Metal",
+            "value": 11249.35,
+            "changePercent": -3.24
+          },
+          {
+            "key": "niftyRealty",
+            "label": "Nifty Realty",
+            "value": 702.95,
+            "changePercent": -3.81
+          },
+          {
+            "key": "niftyOilGas",
+            "label": "Nifty Oil & Gas",
+            "value": 10974.65,
+            "changePercent": -1.98
+          },
+          {
+            "key": "niftyMedia",
+            "label": "Nifty Media",
+            "value": 1311.45,
+            "changePercent": -2.98
+          },
+          {
+            "key": "niftyFinancialServices",
+            "label": "Nifty Financial Services",
+            "value": 24951.8,
+            "changePercent": -3.76
+          },
+          {
+            "key": "niftyConsumerDurables",
+            "label": "Nifty Consumer Durables",
+            "value": 34491.35,
+            "changePercent": -3.64
+          },
+          {
+            "key": "niftyInfrastructure",
+            "label": "Nifty Infrastructure",
+            "value": 8716.55,
+            "changePercent": -2.79
+          }
+        ]
+      },
+      "panels": {
+        "volatility": {
+          "vixLevel": 22.8,
+          "vix5dSlope": 0.6732898682396806,
+          "vixPercentile": 99.19028340080972,
+          "vixRocProxy": 15.222328025397902,
+          "pcr": 0.74,
+          "pcrSource": "Estimated from VIX regime"
+        },
+        "trend": {
+          "niftyPrice": 23002.15,
+          "bankNiftyPrice": 53451,
+          "ma20": 24480.0076171875,
+          "ma50": 25162.49109375,
+          "ma200": 25290.222373046876,
+          "bank50": 59113.326171875,
+          "niftyAbove20": false,
+          "niftyAbove50": false,
+          "niftyAbove200": false,
+          "bankNiftyAbove50": false,
+          "rsi14": 23.939028984046303,
+          "regime": "downtrend",
+          "giftNiftySignal": "neutral"
+        },
+        "breadth": {
+          "advances": 1,
+          "declines": 49,
+          "adRatio": 0.02040816326530612,
+          "pctAbove20d": 20,
+          "pctAbove50d": 15,
+          "pctAbove200d": 10,
+          "newHighsVsLows": -38,
+          "mcclellanEquivalent": -96,
+          "source": "NSE"
+        },
+        "momentum": {
+          "sectors": [
+            {
+              "key": "niftyIT",
+              "label": "Nifty IT",
+              "value": 28579.6,
+              "changePercent": -3.31
+            },
+            {
+              "key": "bankNifty",
+              "label": "Nifty Bank",
+              "value": 53451,
+              "changePercent": -3.39
+            },
+            {
+              "key": "niftyPharma",
+              "label": "Nifty Pharma",
+              "value": 22101.65,
+              "changePercent": -2.35
+            },
+            {
+              "key": "niftyAuto",
+              "label": "Nifty Auto",
+              "value": 24509.9,
+              "changePercent": -4.25
+            },
+            {
+              "key": "niftyFMCG",
+              "label": "Nifty FMCG",
+              "value": 46861.95,
+              "changePercent": -2.53
+            },
+            {
+              "key": "niftyMetal",
+              "label": "Nifty Metal",
+              "value": 11249.35,
+              "changePercent": -3.24
+            },
+            {
+              "key": "niftyRealty",
+              "label": "Nifty Realty",
+              "value": 702.95,
+              "changePercent": -3.81
+            },
+            {
+              "key": "niftyOilGas",
+              "label": "Nifty Oil & Gas",
+              "value": 10974.65,
+              "changePercent": -1.98
+            },
+            {
+              "key": "niftyMedia",
+              "label": "Nifty Media",
+              "value": 1311.45,
+              "changePercent": -2.98
+            },
+            {
+              "key": "niftyFinancialServices",
+              "label": "Nifty Financial Services",
+              "value": 24951.8,
+              "changePercent": -3.76
+            },
+            {
+              "key": "niftyConsumerDurables",
+              "label": "Nifty Consumer Durables",
+              "value": 34491.35,
+              "changePercent": -3.64
+            },
+            {
+              "key": "niftyInfrastructure",
+              "label": "Nifty Infrastructure",
+              "value": 8716.55,
+              "changePercent": -2.79
+            }
+          ],
+          "top3": [
+            {
+              "key": "niftyOilGas",
+              "label": "Nifty Oil & Gas",
+              "value": 10974.65,
+              "changePercent": -1.98
+            },
+            {
+              "key": "niftyPharma",
+              "label": "Nifty Pharma",
+              "value": 22101.65,
+              "changePercent": -2.35
+            },
+            {
+              "key": "niftyFMCG",
+              "label": "Nifty FMCG",
+              "value": 46861.95,
+              "changePercent": -2.53
+            }
+          ],
+          "bottom3": [
+            {
+              "key": "niftyFinancialServices",
+              "label": "Nifty Financial Services",
+              "value": 24951.8,
+              "changePercent": -3.76
+            },
+            {
+              "key": "niftyRealty",
+              "label": "Nifty Realty",
+              "value": 702.95,
+              "changePercent": -3.81
+            },
+            {
+              "key": "niftyAuto",
+              "label": "Nifty Auto",
+              "value": 24509.9,
+              "changePercent": -4.25
+            }
+          ],
+          "spreadTop3Bottom3": 1.65,
+          "positiveSectors": 0,
+          "pctNifty500HigherHighs": 20,
+          "leadershipConcentration": 0
+        },
+        "macro": {
+          "gsec10y": 7.08,
+          "gsecTrend": "flat",
+          "usdInr": 83.1,
+          "usdInrTrend": "up",
+          "rbiStance": "neutral",
+          "fiiNetCr": -2714.35,
+          "diiNetCr": 3253.03,
+          "fiiSource": "NSE"
+        }
+      },
+      "alerts": [
+        {
+          "level": "amber",
+          "code": "FO_EXPIRY",
+          "message": "Weekly F&O expiry within 24 hours. Expect whipsaws and pin-risk behavior."
+        },
+        {
+          "level": "red",
+          "code": "FII_SELLING",
+          "message": "FII is net selling. Risk appetite can fade quickly in swing setups."
+        }
+      ]
+    },
+    "positional": {
+      "meta": {
+        "title": "Should I Be Trading?",
+        "mode": "positional",
+        "modeLabel": "Positional",
+        "marketOpen": false,
+        "asOfIST": "2026-03-19 16:32:49",
+        "status": "LIVE",
+        "dataFreshnessNote": "Latest available NSE/Yahoo data with resilient fallbacks",
+        "quoteSourceMix": {
+          "nse": 15,
+          "yahoo": 0,
+          "staticFallback": 1
+        }
+      },
+      "decision": {
+        "value": "NO",
+        "action": "Avoid trading, preserve capital"
+      },
+      "marketQualityScore": 18.8,
+      "executionWindowScore": 42,
+      "summary": "Environment is fragile and capital protection should dominate. Nifty regime is chop with RSI at 23.9 and India VIX at 22.80 (0.67% 5d slope). Breadth A/D ratio is 0.02 while FII flows are net negative. Execution window reads 42/100 for Positional mode.",
+      "categoryScores": {
+        "volatility": 40,
+        "momentum": 21,
+        "trend": 0,
+        "breadth": 0,
+        "macroLiquidity": 35
+      },
+      "weights": {
+        "volatility": 25,
+        "momentum": 25,
+        "trend": 20,
+        "breadth": 20,
+        "macroLiquidity": 10
+      },
+      "ticker": {
+        "nifty50": {
+          "symbol": "^NSEI",
+          "shortName": "NIFTY 50",
+          "price": 23002.15,
+          "change": -775.65,
+          "changePercent": -3.26,
+          "previousClose": 23777.8,
+          "timestamp": null,
+          "source": "NSE"
+        },
+        "bankNifty": {
+          "symbol": "^NSEBANK",
+          "shortName": "NIFTY BANK",
+          "price": 53451,
+          "change": -1875.05,
+          "changePercent": -3.39,
+          "previousClose": 55326.05,
+          "timestamp": null,
+          "source": "NSE"
+        },
+        "indiaVix": {
+          "symbol": "^INDIAVIX",
+          "shortName": "INDIA VIX",
+          "price": 22.8,
+          "change": 4.08,
+          "changePercent": 21.79,
+          "previousClose": 18.72,
+          "timestamp": null,
+          "source": "NSE"
+        },
+        "usdInr": {
+          "price": 83.1,
+          "changePercent": 0.06,
+          "symbol": "USDINR=X",
+          "timestamp": "2026-03-19T11:02:17.355Z"
+        },
+        "gsec10y": {
+          "symbol": "IN10Y",
+          "price": 7.08,
+          "changePercent": 0.05
+        },
+        "sectors": [
+          {
+            "key": "niftyIT",
+            "label": "Nifty IT",
+            "value": 28579.6,
+            "changePercent": -3.31
+          },
+          {
+            "key": "bankNifty",
+            "label": "Nifty Bank",
+            "value": 53451,
+            "changePercent": -3.39
+          },
+          {
+            "key": "niftyPharma",
+            "label": "Nifty Pharma",
+            "value": 22101.65,
+            "changePercent": -2.35
+          },
+          {
+            "key": "niftyAuto",
+            "label": "Nifty Auto",
+            "value": 24509.9,
+            "changePercent": -4.25
+          },
+          {
+            "key": "niftyFMCG",
+            "label": "Nifty FMCG",
+            "value": 46861.95,
+            "changePercent": -2.53
+          },
+          {
+            "key": "niftyMetal",
+            "label": "Nifty Metal",
+            "value": 11249.35,
+            "changePercent": -3.24
+          },
+          {
+            "key": "niftyRealty",
+            "label": "Nifty Realty",
+            "value": 702.95,
+            "changePercent": -3.81
+          },
+          {
+            "key": "niftyOilGas",
+            "label": "Nifty Oil & Gas",
+            "value": 10974.65,
+            "changePercent": -1.98
+          },
+          {
+            "key": "niftyMedia",
+            "label": "Nifty Media",
+            "value": 1311.45,
+            "changePercent": -2.98
+          },
+          {
+            "key": "niftyFinancialServices",
+            "label": "Nifty Financial Services",
+            "value": 24951.8,
+            "changePercent": -3.76
+          },
+          {
+            "key": "niftyConsumerDurables",
+            "label": "Nifty Consumer Durables",
+            "value": 34491.35,
+            "changePercent": -3.64
+          },
+          {
+            "key": "niftyInfrastructure",
+            "label": "Nifty Infrastructure",
+            "value": 8716.55,
+            "changePercent": -2.79
+          }
+        ]
+      },
+      "panels": {
+        "volatility": {
+          "vixLevel": 22.8,
+          "vix5dSlope": 0.6732898682396806,
+          "vixPercentile": 99.19028340080972,
+          "vixRocProxy": 15.222328025397902,
+          "pcr": 0.74,
+          "pcrSource": "Estimated from VIX regime"
+        },
+        "trend": {
+          "niftyPrice": 23002.15,
+          "bankNiftyPrice": 53451,
+          "ma20": 25162.49109375,
+          "ma50": 25561.533125,
+          "ma200": 25290.222373046876,
+          "bank50": 59113.326171875,
+          "niftyAbove20": false,
+          "niftyAbove50": false,
+          "niftyAbove200": false,
+          "bankNiftyAbove50": false,
+          "rsi14": 23.939028984046303,
+          "regime": "chop",
+          "giftNiftySignal": "neutral"
+        },
+        "breadth": {
+          "advances": 1,
+          "declines": 49,
+          "adRatio": 0.02040816326530612,
+          "pctAbove20d": 20,
+          "pctAbove50d": 15,
+          "pctAbove200d": 10,
+          "newHighsVsLows": -38,
+          "mcclellanEquivalent": -96,
+          "source": "NSE"
+        },
+        "momentum": {
+          "sectors": [
+            {
+              "key": "niftyIT",
+              "label": "Nifty IT",
+              "value": 28579.6,
+              "changePercent": -3.31
+            },
+            {
+              "key": "bankNifty",
+              "label": "Nifty Bank",
+              "value": 53451,
+              "changePercent": -3.39
+            },
+            {
+              "key": "niftyPharma",
+              "label": "Nifty Pharma",
+              "value": 22101.65,
+              "changePercent": -2.35
+            },
+            {
+              "key": "niftyAuto",
+              "label": "Nifty Auto",
+              "value": 24509.9,
+              "changePercent": -4.25
+            },
+            {
+              "key": "niftyFMCG",
+              "label": "Nifty FMCG",
+              "value": 46861.95,
+              "changePercent": -2.53
+            },
+            {
+              "key": "niftyMetal",
+              "label": "Nifty Metal",
+              "value": 11249.35,
+              "changePercent": -3.24
+            },
+            {
+              "key": "niftyRealty",
+              "label": "Nifty Realty",
+              "value": 702.95,
+              "changePercent": -3.81
+            },
+            {
+              "key": "niftyOilGas",
+              "label": "Nifty Oil & Gas",
+              "value": 10974.65,
+              "changePercent": -1.98
+            },
+            {
+              "key": "niftyMedia",
+              "label": "Nifty Media",
+              "value": 1311.45,
+              "changePercent": -2.98
+            },
+            {
+              "key": "niftyFinancialServices",
+              "label": "Nifty Financial Services",
+              "value": 24951.8,
+              "changePercent": -3.76
+            },
+            {
+              "key": "niftyConsumerDurables",
+              "label": "Nifty Consumer Durables",
+              "value": 34491.35,
+              "changePercent": -3.64
+            },
+            {
+              "key": "niftyInfrastructure",
+              "label": "Nifty Infrastructure",
+              "value": 8716.55,
+              "changePercent": -2.79
+            }
+          ],
+          "top3": [
+            {
+              "key": "niftyOilGas",
+              "label": "Nifty Oil & Gas",
+              "value": 10974.65,
+              "changePercent": -1.98
+            },
+            {
+              "key": "niftyPharma",
+              "label": "Nifty Pharma",
+              "value": 22101.65,
+              "changePercent": -2.35
+            },
+            {
+              "key": "niftyFMCG",
+              "label": "Nifty FMCG",
+              "value": 46861.95,
+              "changePercent": -2.53
+            }
+          ],
+          "bottom3": [
+            {
+              "key": "niftyFinancialServices",
+              "label": "Nifty Financial Services",
+              "value": 24951.8,
+              "changePercent": -3.76
+            },
+            {
+              "key": "niftyRealty",
+              "label": "Nifty Realty",
+              "value": 702.95,
+              "changePercent": -3.81
+            },
+            {
+              "key": "niftyAuto",
+              "label": "Nifty Auto",
+              "value": 24509.9,
+              "changePercent": -4.25
+            }
+          ],
+          "spreadTop3Bottom3": 1.65,
+          "positiveSectors": 0,
+          "pctNifty500HigherHighs": 20,
+          "leadershipConcentration": 0
+        },
+        "macro": {
+          "gsec10y": 7.08,
+          "gsecTrend": "flat",
+          "usdInr": 83.1,
+          "usdInrTrend": "up",
+          "rbiStance": "neutral",
+          "fiiNetCr": -2714.35,
+          "diiNetCr": 3253.03,
+          "fiiSource": "NSE"
+        }
+      },
+      "alerts": [
+        {
+          "level": "amber",
+          "code": "FO_EXPIRY",
+          "message": "Weekly F&O expiry within 24 hours. Expect whipsaws and pin-risk behavior."
+        },
+        {
+          "level": "red",
+          "code": "FII_SELLING",
+          "message": "FII is net selling. Risk appetite can fade quickly in swing setups."
+        }
+      ]
+    }
+  }
+}
