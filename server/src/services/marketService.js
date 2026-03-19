@@ -307,16 +307,19 @@ export async function buildDashboardPayload(mode = "swing") {
   };
 
   const concentration = top3.reduce((acc, s) => acc + Math.max(s.changePercent, 0), 0);
-  const totalPositive = sectorPerformance.reduce((acc, s) => acc + Math.max(s.changePercent, 0), 0) || 1;
+  const totalPositive = sectorPerformance.reduce((acc, s) => acc + Math.max(s.changePercent, 0), 0);
+  const leadershipConcentration = totalPositive > 0 ? concentration / totalPositive : 1;
 
   const momentum = {
     sectors: sectorPerformance,
     top3,
     bottom3,
+    top3Avg: Number(top3Avg.toFixed(2)),
+    bottom3Avg: Number(bottom3Avg.toFixed(2)),
     spreadTop3Bottom3: Number((top3Avg - bottom3Avg).toFixed(2)),
     positiveSectors,
     pctNifty500HigherHighs: Math.max(20, Math.min(75, breadthProxy + (trend.regime === "uptrend" ? 10 : -5))),
-    leadershipConcentration: Number((concentration / totalPositive).toFixed(2))
+    leadershipConcentration: Number(leadershipConcentration.toFixed(2))
   };
 
   const usdTrend = directionFromNumber(slope(usdInrClose, 5), 0.08);

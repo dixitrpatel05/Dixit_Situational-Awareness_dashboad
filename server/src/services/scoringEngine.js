@@ -60,19 +60,26 @@ function scoreBreadth(breadth) {
 
 function scoreMomentum(momentum) {
   let score = 0;
+  const top3Avg = Number.isFinite(momentum.top3Avg) ? momentum.top3Avg : 0;
+  const bottom3Avg = Number.isFinite(momentum.bottom3Avg) ? momentum.bottom3Avg : 0;
 
   score += Math.min(35, momentum.positiveSectors * 4);
 
-  if (momentum.spreadTop3Bottom3 > 2.5) score += 25;
-  else if (momentum.spreadTop3Bottom3 > 1.2) score += 18;
+  if (top3Avg > 0 && momentum.spreadTop3Bottom3 > 2.5) score += 25;
+  else if (top3Avg > 0 && momentum.spreadTop3Bottom3 > 1.2) score += 18;
+  else if (top3Avg <= 0) score -= 12;
   else if (momentum.spreadTop3Bottom3 < 0.3) score -= 8;
 
   if (momentum.pctNifty500HigherHighs > 45) score += 20;
   else if (momentum.pctNifty500HigherHighs > 35) score += 12;
   else if (momentum.pctNifty500HigherHighs < 25) score -= 12;
 
-  if (momentum.leadershipConcentration <= 0.45) score += 15;
-  else score -= 5;
+  if (momentum.positiveSectors <= 3) score -= 10;
+  else if (momentum.positiveSectors >= 8) score += 8;
+
+  if (momentum.leadershipConcentration <= 0.45 && top3Avg > 0) score += 15;
+  else if (momentum.leadershipConcentration >= 0.7 || top3Avg <= 0 || bottom3Avg < -1.8) score -= 10;
+  else score -= 4;
 
   return clamp(score);
 }
@@ -131,10 +138,6 @@ function computeExecutionWindow(data) {
   return clamp(score);
 }
 
-function verdictFromBoolean(ok) {
-  return ok ? "Yes" : "No";
-}
-
 function convictionFromScore(score) {
   if (score >= 75) return "High conviction";
   if (score >= 60) return "Moderate conviction";
@@ -163,7 +166,11 @@ function buildExecutionWindow(data, score) {
     {
       key: "leaders",
       label: "Leaders holding?",
-      ok: top3Average > 0.25 && data.momentum.leadershipConcentration <= 0.58,
+      ok:
+        top3Average > 0.25 &&
+        data.momentum.leadershipConcentration <= 0.58 &&
+        data.momentum.positiveSectors >= 5 &&
+        data.breadth.adRatio >= 1,
       passCue: "Leadership stable",
       failCue: "Leaders fading"
     },
@@ -177,21 +184,33 @@ function buildExecutionWindow(data, score) {
     {
       key: "followThrough",
       label: "Follow-through?",
-      ok:
+      status:
         data.momentum.spreadTop3Bottom3 > 1.2 &&
         data.volatility.pcr >= 0.85 &&
         data.volatility.pcr <= 1.3 &&
-        (data.macro.fiiNetCr === null || data.macro.fiiNetCr >= -150),
+        (data.macro.fiiNetCr === null || data.macro.fiiNetCr >= -150)
+          ? "healthy"
+          : data.momentum.spreadTop3Bottom3 > 0.5 &&
+              data.volatility.pcr >= 0.75 &&
+              data.volatility.pcr <= 1.4 &&
+              (data.macro.fiiNetCr === null || data.macro.fiiNetCr >= -500)
+            ? "watch"
+            : "risk-off",
       passCue: "Trend extension",
-      failCue: "Low conviction"
+      watchCue: "Low conviction",
+      failCue: "No follow-through"
     }
-  ].map((check) => ({
-    key: check.key,
-    label: check.label,
-    verdict: verdictFromBoolean(check.ok),
-    cue: check.ok ? check.passCue : check.failCue,
-    state: check.ok ? "healthy" : "risk-off"
-  }));
+  ].map((check) => {
+    const resolvedState = check.status || (check.ok ? "healthy" : "risk-off");
+
+    return {
+      key: check.key,
+      label: check.label,
+      verdict: resolvedState === "healthy" ? "Yes" : resolvedState === "watch" ? "Weak" : "No",
+      cue: resolvedState === "healthy" ? check.passCue : resolvedState === "watch" ? check.watchCue : check.failCue,
+      state: resolvedState
+    };
+  });
 
   const failedChecks = checks.filter((check) => check.verdict === "No").length;
 
