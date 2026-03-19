@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/index.js",
     "start": "node src/index.js",
-    "build": "npm --prefix ../client install && npm --prefix ../client run build"
+    "build": "echo \"No build step for Node runtime\""
   },
   "dependencies": {
     "axios": "^1.8.4",
